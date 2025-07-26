@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Challenge Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>ChallengeHub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="saved.html" class="nav-link">Saved</a></li>
+                    <li><a href="admin.html" class="nav-link">Admin</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Discover Your Next Challenge</h2>
+                <p>Get random coding, design, and problem-solving challenges to level up your skills</p>
+                <div class="challenge-container">
+                    <div id="challenge-display" class="challenge-card">
+                        <h3>Click generate to get your challenge!</h3>
+                        <p>Ready to push your boundaries?</p>
+                    </div>
+                    <button id="generate-btn" class="btn-primary">Generate Challenge</button>
+                    <button id="save-btn" class="btn-secondary" style="display: none;">Save Challenge</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ChallengeHub. All rights reserved.</p>
+            <p>Built with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

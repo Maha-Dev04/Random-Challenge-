@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Challenges - ChallengeHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>ChallengeHub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="saved.html" class="nav-link active">Saved</a></li>
+                    <li><a href="admin.html" class="nav-link">Admin</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="saved-section">
+            <div class="container">
+                <h2>Your Saved Challenges</h2>
+                
+                <div class="saved-controls">
+                    <button id="load-xml-btn" class="btn-secondary">Load from XML</button>
+
+                  <button id="clear-saved-btn" class="btn-danger">Clear All</button>
+                </div>
+                
+                <div id="saved-challenges" class="challenges-grid">
+                    <div class="no-challenges">
+                        <h3>No saved challenges yet</h3>
+                        <p>Start generating challenges and save your favorites!</p>
+                        <a href="index.html" class="btn-primary">Generate Challenges</a>
+                    </div>
+                </div>
+                
+                <div id="loading" class="loading" style="display: none;">
+                    <p>Loading saved challenges...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ChallengeHub. All rights reserved.</p>
+            <p>Built with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load saved challenges on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSavedChallenges();
+        });
+
+        function loadSavedChallenges() {
+            const savedChallenges = JSON.parse(localStorage.getItem('savedChallenges') || '[]');
+            displaySavedChallenges(savedChallenges);
+        }
+
+        function displaySavedChallenges(challenges) {
+            const container = document.getElementById('saved-challenges');
+            
+            if (challenges.length === 0) {
+                container.innerHTML = `
+                    <div class="no-challenges">
+                        <h3>No saved challenges yet</h3>
+                        <p>Start generating challenges and save your favorites!</p>
+                        <a href="index.html" class="btn-primary">Generate Challenges</a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = challenges.map((challenge, index) => `
+                <div class="challenge-item">
+                    <div class="challenge-header">
+                        <h3>${challenge.title}</h3>
+                        <span class="challenge-category">${challenge.category}</span>
+                    </div>
+                    <p class="challenge-description">${challenge.description}</p>
+                    <div class="challenge-meta">
+                        <span class="difficulty ${challenge.difficulty.toLowerCase()}">${challenge.difficulty}</span>
+                        <span class="saved-date">Saved: ${new Date(challenge.savedAt).toLocaleDateString()}</span>
+                    </div>
+                    <button onclick="removeSavedChallenge(${index})" class="btn-danger btn-small">Remove</button>
+                </div>
+            `).join('');
+        }
+
+        function removeSavedChallenge(index) {
+            const savedChallenges = JSON.parse(localStorage.getItem('savedChallenges') || '[]');
+            savedChallenges.splice(index, 1);
+            localStorage.setItem('savedChallenges', JSON.stringify(savedChallenges));
+            loadSavedChallenges();
+        }
+
+        // Load from XML via AJAX
+        document.getElementById('load-xml-btn').addEventListener('click', function() {
+            document.getElementById('loading').style.display = 'block';
+            fetch('view.jsp?source=xml')
+                .then(response => response.json())
+                .then(data => {
+                    displaySavedChallenges(data);
+                    document.getElementById('loading').style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error loading from XML:', error);
+                    document.getElementById('loading').style.display = 'none';
+                });
+        });
+
+       
+        // Clear all saved challenges
+        document.getElementById('clear-saved-btn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear all saved challenges?')) {
+                localStorage.removeItem('savedChallenges');
+                loadSavedChallenges();
+            }
+        });
+    </script>
+</body>
+</html>

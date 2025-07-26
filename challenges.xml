@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<challenges>
+    <challenge>
+        <title>Build a Responsive Portfolio Website</title>
+        <category>Web Development</category>
+        <difficulty>Intermediate</difficulty>
+        <description>Create a responsive portfolio website using HTML, CSS, and JavaScript.</description>
+        <requirements>Must include a homepage, about section, and contact form.</requirements>
+        <tags>html, css, javascript</tags>
+        <savedAt>2024-01-01T12:00:00Z</savedAt>
+    </challenge>
+    <challenge>
+        <title>Design a Mobile To-Do App</title>
+        <category>Mobile Apps</category>
+        <difficulty>Beginner</difficulty>
+        <description>Design a simple to-do list app for mobile devices.</description>
+        <requirements>Include add, edit, and delete task functionality.</requirements>
+        <tags>mobile, design, todo</tags>
+        <savedAt>2024-01-02T12:00:00Z</savedAt>
+    </challenge>
+    <challenge>
+        <title>Implement a Binary Search Tree</title>
+        <category>Data Structures</category>
+        <difficulty>Advanced</difficulty>
+        <description>Implement a binary search tree with insert, delete, and search operations.</description>
+        <requirements>Use any programming language.</requirements>
+        <tags>data structures, bst, algorithms</tags>
+        <savedAt>2024-01-03T12:00:00Z</savedAt>
+    </challenge>
+<challenge><title>Create a RESTful API</title><category>API Development</category><difficulty>Intermediate</difficulty><estimatedTime/><description>Build a RESTful API for a blog platform.</description><requirements>Support CRUD operations for posts and comments.</requirements><tags>api, rest, backend</tags><savedAt>2025-07-26T14:11:47+00:00</savedAt></challenge><challenge><title>sdv</title><category>API Development</category><difficulty>Advanced</difficulty><estimatedTime>2</estimatedTime><description>fdwsvc</description><requirements>dsvc</requirements><tags>html</tags><savedAt>2025-07-26T14:18:04+00:00</savedAt></challenge><challenge><title>Build a Responsive Portfolio Website</title><category>Web Development</category><difficulty>Intermediate</difficulty><estimatedTime/><description>Create a responsive portfolio website using HTML, CSS, and JavaScript.</description><requirements>Must include a homepage, about section, and contact form.</requirements><tags>html, css, javascript</tags><savedAt>2025-07-26T14:19:09+00:00</savedAt></challenge><challenge><title> Currency Converter</title><category>Web Development</category><difficulty>Intermediate</difficulty><estimatedTime>2-3</estimatedTime><description>Create a currency converter using a public API.</description><requirements>Support at least 5 currencies and automatic conversion.</requirements><tags>currency, api, javascript</tags><savedAt>2025-07-26T14:25:22+00:00</savedAt></challenge><challenge><title>Design a Mobile To-Do App</title><category>Mobile Apps</category><difficulty>Beginner</difficulty><estimatedTime/><description>Design a simple to-do list app for mobile devices.</description><requirements>Include add, edit, and delete task functionality.</requirements><tags>mobile, design, todo</tags><savedAt>2025-07-26T14:28:05+00:00</savedAt></challenge><challenge id="1"><title>Implement a Binary Search Tree</title><category>Data Structures</category><difficulty>Advanced</difficulty><estimatedTime/><description>Implement a binary search tree with insert, delete, and search operations.</description><requirements>Use any programming language.</requirements><tags>data structures, bst, algorithms</tags><savedAt>2025-07-26T14:30:48+00:00</savedAt></challenge><challenge id="2"><title>Design a Mobile To-Do App</title><category>Mobile Apps</category><difficulty>Beginner</difficulty><estimatedTime/><description>Design a simple to-do list app for mobile devices.</description><requirements>Include add, edit, and delete task functionality.</requirements><tags>mobile, design, todo</tags><savedAt>2025-07-26T14:31:07+00:00</savedAt></challenge></challenges>
