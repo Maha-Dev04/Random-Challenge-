@@ -1,2 +1,2 @@
-# Random-Challenge-
+# Random-Challenge-gen
 Web Project
